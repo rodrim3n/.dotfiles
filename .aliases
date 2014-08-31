@@ -1,0 +1,22 @@
+alias ..='cd ..'
+alias cl='clear'
+alias grep='grep --color=auto'
+alias df='df -H'
+alias mplayer="mplayer -msgcolor"
+
+alias vi='vim'
+alias svi='sudo vi'
+
+alias mv='mv -v'
+alias cp='cp -v'
+alias srm="sudo rm -Rfv"
+
+alias update='sudo apt-get update && sudo apt-get upgrade'
+alias sai='sudo apt-get install -y'
+
+alias gs='git status -bs'
+alias ga='git add --all '
+
+alias music='cd /media/datos/MUSICA/'
+
+
