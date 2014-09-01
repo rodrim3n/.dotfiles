@@ -53,6 +53,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.yat.sh/bin:$PATH"
 eval "$(rbenv init -)"
 
 # export MANPATH="/usr/local/man:$MANPATH"
