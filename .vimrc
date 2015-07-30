@@ -591,7 +591,6 @@ colorscheme Tomorrow-Night " This changes a lot
 " no background for those vertical splits, they look ugly
 hi VertSplit guibg=NONE ctermbg=NONE gui=NONE
 
-
 " dont comment out next line (dont know why this must go last)
 autocmd FileType * setlocal formatoptions-=o formatoptions-=r
 "}}}

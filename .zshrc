@@ -83,3 +83,6 @@ eval "$(rbenv init -)"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.aliases
+export PATH="$HOME/.rbenv/bin:$PATH"
+export TERM=screen-256color
+
