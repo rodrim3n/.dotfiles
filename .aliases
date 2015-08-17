@@ -1,11 +1,11 @@
 alias ..='cd ..'
-alias cl='clear'
 alias grep='grep --color=auto'
 alias df='df -H'
 alias mplayer="mplayer -msgcolor"
 
+alias v='vim'
 alias vi='vim'
-alias svi='sudo vi'
+alias svi='sudo vim'
 
 alias mv='mv -v'
 alias cp='cp -v'
@@ -16,8 +16,11 @@ alias sai='sudo apt-get install -y'
 
 alias gs='git status -bs'
 alias ga='git add --all '
-alias gc='git commit -m'
+alias gcm='git commit -m'
 alias gco='git checkout'
 
 
 alias tmux='TERM=screen-256color-bce tmux'
+
+# Python Virtual ENV
+alias activate='source ./bin/activate'
