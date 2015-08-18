@@ -22,5 +22,3 @@ alias gco='git checkout'
 
 alias tmux='TERM=screen-256color-bce tmux'
 
-# Python Virtual ENV
-alias activate='source ./bin/activate'
