@@ -15,7 +15,7 @@ alias update='sudo apt-get update && sudo apt-get upgrade'
 alias sai='sudo apt-get install -y'
 
 alias gs='git status -bs'
-alias ga='git add --all '
+alias ga='git add'
 alias gcm='git commit -m'
 alias gco='git checkout'
 

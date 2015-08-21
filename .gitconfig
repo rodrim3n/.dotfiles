@@ -1,3 +1,5 @@
 [user]
 	email = rodri.m3n@gmail.com
 	name = Rodrigo Otero
+[push]
+	default = simple
