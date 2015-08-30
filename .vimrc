@@ -2,18 +2,12 @@
 set nocompatible    " be iMproved, required
 filetype off        " required
 
-" Set the runtime path to include Vundle and initialize
-" set rtp+=~/.vim/bundle/vundle/
-" call vundle#begin()
 call plug#begin('~/.vim/plugged')
-"}}}
 "Editor:---------------------------------------------------------------{{{
 
 " Change Leader
 let mapleader=','
 let maplocalleader='\'
-
-
 
 " Basically this makes terminal Vim work sanely.
 set backspace=2 " Make backspace work like most other apps
@@ -71,22 +65,22 @@ Plug 'editorconfig/editorconfig-vim' " http://editorconfig.org/
 
 " Enable "bracketed paste mode"
 " http://stackoverflow.com/a/7053522/31493
-if &term =~ "xterm.*"
-    let &t_ti = &t_ti . "\e[?2004h"
-    let &t_te = "\e[?2004l" . &t_te
-    function XTermPasteBegin(ret)
-        set pastetoggle=<Esc>[201~
-        set paste
-        return a:ret
-    endfunction
-    map <expr> <Esc>[200~ XTermPasteBegin("i")
-    imap <expr> <Esc>[200~ XTermPasteBegin("")
-    cmap <Esc>[200~ <nop>
-    cmap <Esc>[201~ <nop>
-endif
+" if &term =~ "xterm.*"
+"     let &t_ti = &t_ti . "\e[?2004h"
+"     let &t_te = "\e[?2004l" . &t_te
+"     function XTermPasteBegin(ret)
+"         set pastetoggle=<Esc>[201~
+"         set paste
+"         return a:ret
+"     endfunction
+"     map <expr> <Esc>[200~ XTermPasteBegin("i")
+"     imap <expr> <Esc>[200~ XTermPasteBegin("")
+"     cmap <Esc>[200~ <nop>
+"     cmap <Esc>[201~ <nop>
+" endif
 "}}}--------------------[ end Editor  ]-----------------------------------
 " Various Bundles:---------------------------------------------------------------{{{
-Plug 'gmarik/vundle' " let Vundle manage Vundle, required
+"Plug 'gmarik/vundle' " let Vundle manage Vundle, required
 " General:
 Plug 'tpope/vim-repeat' " enable repeating supported plugin maps with .
 Plug 'tpope/vim-eunuch' " nice UNIX helpers like SudoWrite, etc
@@ -98,7 +92,7 @@ Plug 'jiangmiao/auto-pairs'         " easy quoting, etc. ie: insert ' -> ''; [ -
 Plug 'mattn/emmet-vim'              " new era of zencoding :)
 Plug 'Lokaltog/vim-easymotion'      " jump, jump, jump around
 Plug 'terryma/vim-multiple-cursors' " sublime multi cursors wannabe
-Plug 'matchit.zip'                  " match tags :)
+Plug 'tmhedberg/matchit'              " match tags :)
 " Faster matching
 nmap <Tab> %
 vmap <Tab> %
@@ -148,14 +142,14 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 " let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets,~/.vim/snippets'
 
 " open snippets dir
-map <Leader>h :vsp ~/.vim/Bundle/vim-snippets/snippets/<CR>
+map <Leader>h :vsp ~/.vim/plugged/vim-snippets/snippets/<CR>
 "}}}
 " CSM:
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 " Tags:
-Plug 'majutsushi/tagbar'
-map <Leader>s :TagbarOpenAutoClose<CR>
+" Plug 'majutsushi/tagbar'
+" map <Leader>s :TagbarOpenAutoClose<CR>
 " TODO: replace with https://github.com/h1mesuke/unite-outline
 
 
