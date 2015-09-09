@@ -196,6 +196,7 @@ Plug 'tpope/vim-endwise'
 Plug 'https://github.com/vim-ruby/vim-ruby'
 Plug 'tpope/vim-Bundler'
 Plug 'sunaku/vim-ruby-minitest'
+Plug 'rodrim3n/vim-mote'
 
 
 " " Rails AutoCompletion (test)
