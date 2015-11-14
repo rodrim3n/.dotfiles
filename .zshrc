@@ -48,7 +48,7 @@ DISABLE_AUTO_UPDATE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
-
+fpath=(~/.zsh/completions $fpath)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -88,3 +88,4 @@ source /usr/local/bin/virtualenvwrapper.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+export EDITOR=vim

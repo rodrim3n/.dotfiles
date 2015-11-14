@@ -160,6 +160,7 @@ Plug 'mattn/gist-vim' " Gist from withing vim :)
 Plug 'groenewege/vim-less'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'kchmck/vim-coffee-script'
+Plug 'jaxbot/browserlink.vim'
 " CSS and LessCSS -------------------------------------{{{
 
 augroup ft_css
@@ -208,6 +209,7 @@ Plug 'rodrim3n/vim-mote'
 "
 "}}}--------------------[ end Ruby ]----------------------------------------
 " PHP:---------------------------------------------------------------{{{
+Plug 'evidens/vim-twig'
 " Plug 'shawncplus/phpcomplete.vim'
 " Plug 'vim-scripts/symfony.vim'
 Plug 'spf13/PIV'
