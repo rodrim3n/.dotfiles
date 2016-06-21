@@ -24,7 +24,7 @@ set listchars=tab:│\ ,extends:▸\,precedes:❮,trail:•
 " alternate tab ❯
 
 " Make vim more useful
-set clipboard=unnamed     " Use system wide clipboard by default
+set clipboard=unnamedplus,unnamed " Use system wide clipboard by default
 set wildmenu              " Enhance command-line completion
 set wildmode=list:full    " Show complete list of options and navigation too
 set esckeys               " Allow cursor keys in insert mode
@@ -106,9 +106,10 @@ Plug 'https://github.com/bps/vim-textobj-python'         " adds {]pf/[pf} and {[
 
 
 " Neocomplete: --------------------------------------------
-Plug 'Shougo/vimproc.vim' " enable async stuff for Shougo's plugins
+Plug 'Shougo/vimproc.vim', {'do': 'make'} " enable async stuff for Shougo's plugins
 " enable context_filetype
 
+Plug 'Konfekt/FastFold'
 Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/neocomplete.vim'
 let g:neocomplete#enable_at_startup=1
@@ -181,6 +182,14 @@ augroup END
 " }}} ------------[end preprocessors]------------
 " Python:---------------------------------------------------------------{{{
 Plug 'klen/python-mode'
+let g:pymode_doc = 0
+let g:pymode_doc_bind = ''
+let g:pymode_lint = 0
+let g:pymode_lint_on_write = 0
+let g:pymode_lint_on_fly = 0
+let g:pymode_rope = 0
+let g:pymode_lint_checkers = []
+let g:pymode_run = 0
 
 let g:pymode_virtualenv = 1
 let g:pymode_virtualenv_path = $VIRTUAL_ENV
@@ -238,15 +247,17 @@ au BufNewFile,BufRead *.md setlocal filetype=markdown
 "}}}
 " Files:---------------------------------------------------------------{{{
 " Fuzzy file/buffer/mru finder
-Plug 'kien/ctrlp.vim'
-let g:ctrlp_prompt_mappings = {
-      \ 'AcceptSelection("h")': ['<c-x>', '<c-cr>', '<c-s>', '<c-h>'],
-      \ }
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*source_maps*,.git,.svn,*/public/assets/*
-let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\v[\/]\.(git|hg|svn|source_maps)$',
-      \ 'file': '\v\.(exe|so|dll|pyc)$'
-      \ }
+" nmap <c-p><c-t> :Tags<cr>
+" nmap <c-p><c-s> :BTags<cr>
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+Plug 'junegunn/fzf.vim'
+let g:fzf_action = {
+      \ 'ctrl-t': 'tab split',
+      \ 'ctrl-x': 'split',
+      \ 'ctrl-v': 'vsplit'}
+
+" let g:fzf_layout = { 'right': '~40%' }
+nmap <c-p> :Files<cr>
 " TODO: check unite instead of ctrlp
 " Plug 'Shougo/unite.vim'
 " Plug 'Shougo/unite-outline'
@@ -318,8 +329,8 @@ set noshowmode             " Remove second status bar when using powerline
 
 " --------------[Powerline]--------------------------------------------------
 Plug 'bling/vim-airline'          " vimscript airline, yay!
+Plug 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts = 1 " use powerline fonts
-let g:airline_theme='bubblegum'   " nice theme
 let g:airline_theme='tomorrow'    " nice theme
 
 if has('gui_running')
@@ -563,7 +574,7 @@ function! Delegate(command)
 endfunction
 
 " Pascal Compile
-map <Leader>b :w<CR> :!fpc %<CR>
+" map <Leader>b :w<CR> :!fpc %<CR>
 
 " PDF auto conversion
 Plug 'rhysd/open-pdf.vim'
@@ -591,90 +602,3 @@ hi VertSplit guibg=NONE ctermbg=NONE gui=NONE
 " dont comment out next line (dont know why this must go last)
 autocmd FileType * setlocal formatoptions-=o formatoptions-=r
 "}}}
-
-
-
-
-
-
-" ==== Unite ======================= {{{
-" ==================================
-" personal unite mappings
-" nnoremap <C-p> :Unite -auto-preview file_rec/async<cr>
-" " clipboard search
-" let g:unite_source_history_yank_enable = 1
-" nnoremap <C-y> :Unite -auto-preview history/yank<cr>
-"
-" " buffer search
-" nnoremap <space>s :Unite -auto-preview -quick-match buffer<cr>
-" nnoremap <space>/ :Unite -auto-preview grep:.<cr>
-
-" call unite#filters#matcher_default#use(['matcher_fuzzy'])
-" call unite#filters#sorter_default#use(['sorter_rank'])
-"
-" let g:unite_source_history_yank_enable = 1
-" let g:unite_force_overwrite_statusline = 0
-" if executable('ag')
-"   let g:unite_source_grep_command = 'ag'
-"   let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
-"   let g:unite_source_grep_recursive_opt = ''
-" endif
-"
-" call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
-"   \ 'ignore_pattern', join([
-"   \ '\.git/',
-"   \ '\.sass-cache/',
-"   \ '\vendor/',
-"   \ '\node_modules/',
-"   \ ], '\|'))
-"
-" " Custom mappings for the unite buffer
-" autocmd FileType unite call s:unite_settings()
-" function! s:unite_settings()
-"   let b:SuperTabDisabled=1
-"
-"   imap <buffer> <C-j> <Plug>(unite_select_next_line)
-"   imap <buffer> <C-k> <Plug>(unite_select_previous_line)
-"   imap <buffer> <c-a> <Plug>(unite_choose_action)
-"
-"   imap <silent><buffer><expr> <C-s> unite#do_action('split')
-"   imap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
-"   imap <silent><buffer><expr> <C-t> unite#do_action('tabopen')
-"
-"   nmap <buffer> <ESC> <Plug>(unite_exit)
-" endfunction
-"
-" " The prefix key
-" nnoremap [unite] <Nop>
-" nmap <space> [unite]
-"
-" " General purpose
-" nnoremap [unite]<space> :Unite -no-split -start-insert source<cr>
-"
-" " Files
-" nnoremap [unite]f :Unite -no-split -start-insert file_rec/async<cr>
-"
-" " Files in rails
-" nnoremap [unite]rm :Unite -no-split -start-insert -input=app/models/ file_rec/async<cr>
-" nnoremap [unite]rv :Unite -no-split -start-insert -input=app/views/ file_rec/async<cr>
-" nnoremap [unite]ra :Unite -no-split -start-insert -input=app/assets/ file_rec/async<cr>
-" nnoremap [unite]rs :Unite -no-split -start-insert -input=spec/ file_rec/async<cr>
-"
-" " Grepping
-" nnoremap [unite]g :Unite -no-split grep:.<cr>
-" nnoremap [unite]d :Unite -no-split grep:.:-s:\(TODO\|FIXME\)<cr>
-"
-" " Content
-" nnoremap [unite]o :Unite -no-split -start-insert -auto-preview outline<cr>
-" nnoremap [unite]l :Unite -no-split -start-insert line<cr>
-" nnoremap [unite]t :!retag<cr>:Unite -no-split -auto-preview -start-insert tag<cr>
-"
-" " Quickly switch between recent things
-" nnoremap [unite]F :Unite -no-split buffer tab file_mru directory_mru<cr>
-" nnoremap [unite]b :Unite -no-split buffer<cr>
-" nnoremap [unite]m :Unite -no-split file_mru<cr>
-"
-" " Yank history
-" nnoremap [unite]y :Unite -no-split history/yank<cr>
-
-" }}}

@@ -19,8 +19,9 @@ alias ga='git add'
 alias gcm='git commit -m'
 alias gco='git checkout'
 
-alias tmux='TERM=screen-256color-bce tmux'
+#alias tmux='TERM=screen-256color-bce tmux'
 alias ys='yat.sh'
 alias vsh='vagrant ssh'
 
 alias be='bundle exec'
+alias pm='python manage.py'

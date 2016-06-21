@@ -57,7 +57,6 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.yat.sh/bin:$PATH"
 export WORKON_HOME=$HOME/.virtualenvs
-export TERM=screen-256color
 eval "$(rbenv init -)"
 
 source ~/.aliases
@@ -89,3 +88,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export EDITOR=vim
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore .hg -g ""'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ $TERM = xterm  ] && export TERM=xterm-256color
