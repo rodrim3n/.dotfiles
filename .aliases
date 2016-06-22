@@ -25,3 +25,5 @@ alias vsh='vagrant ssh'
 
 alias be='bundle exec'
 alias pm='python manage.py'
+
+alias o='xdg-open'
