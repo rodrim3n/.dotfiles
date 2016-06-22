@@ -91,3 +91,10 @@ export EDITOR=vim
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore .hg -g ""'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ $TERM = xterm  ] && export TERM=xterm-256color
+
+
+autoload -U compinit
+
+compinit
+
+fpath=(~/.zsh/completions $fpath)

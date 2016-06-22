@@ -112,7 +112,7 @@ Plug 'Shougo/vimproc.vim', {'do': 'make'} " enable async stuff for Shougo's plug
 Plug 'Konfekt/FastFold'
 Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/neocomplete.vim'
-let g:neocomplete#enable_at_startup=1
+let g:neocomplete#enable_at_startup = 1
 " NeoSnippets: -----------------------------------------------{{{
 Plug 'honza/vim-snippets'
 Plug 'Shougo/neosnippet.vim'
@@ -371,7 +371,7 @@ set title " Show the filename in the window titlebar
 " sane splitting
 set splitbelow            " hsplits below by default
 set splitright            " vsplits right by default
-au VimResized * :wincmd = " Resize splits when the window is resized
+" au VimResized * :wincmd = " Resize splits when the window is resized
 
 " toggles whether or not the current window is automatically zoomed
 function! ToggleMaxWins()
