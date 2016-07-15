@@ -111,8 +111,8 @@ Plug 'Shougo/vimproc.vim', {'do': 'make'} " enable async stuff for Shougo's plug
 
 Plug 'Konfekt/FastFold'
 Plug 'Shougo/context_filetype.vim'
-Plug 'Shougo/neocomplete.vim'
-let g:neocomplete#enable_at_startup = 1
+" Plug 'Shougo/neocomplete.vim'
+" let g:neocomplete#enable_at_startup = 1
 " NeoSnippets: -----------------------------------------------{{{
 Plug 'honza/vim-snippets'
 Plug 'Shougo/neosnippet.vim'
@@ -161,7 +161,7 @@ Plug 'mattn/gist-vim' " Gist from withing vim :)
 Plug 'groenewege/vim-less'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'kchmck/vim-coffee-script'
-Plug 'jaxbot/browserlink.vim'
+" Plug 'jaxbot/browserlink.vim'
 " CSS and LessCSS -------------------------------------{{{
 
 augroup ft_css

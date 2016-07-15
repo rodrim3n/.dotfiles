@@ -27,3 +27,5 @@ alias be='bundle exec'
 alias pm='python manage.py'
 
 alias o='xdg-open'
+
+alias scp='scp -r'
