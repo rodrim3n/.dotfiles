@@ -1,7 +1,10 @@
+# GENERAL
 alias ..='cd ..'
 alias grep='grep --color=auto'
 alias df='df -H'
 alias mplayer="mplayer -msgcolor"
+alias scp='scp -r'
+alias o='xdg-open'
 
 alias v='vim'
 alias vi='vim'
@@ -14,18 +17,21 @@ alias srm="sudo rm -Rfv"
 alias update='sudo apt-get update && sudo apt-get upgrade'
 alias sai='sudo apt-get install -y'
 
+# GIT
 alias gs='git status -bs'
 alias ga='git add'
 alias gcm='git commit -m'
 alias gco='git checkout'
 
+# TMUX
 #alias tmux='TERM=screen-256color-bce tmux'
 alias ys='yat.sh'
 alias vsh='vagrant ssh'
 
 alias be='bundle exec'
+
+
+
+# PYTHON
+alias rmpyc='find . -name "*.pyc" -delete'
 alias pm='python manage.py'
-
-alias o='xdg-open'
-
-alias scp='scp -r'
