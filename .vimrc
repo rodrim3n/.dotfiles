@@ -450,8 +450,6 @@ map <Leader>ei ^diwds(xea =wds{I@
 
 "}}}--------------------[ end Code Formatting  ]----------------------------------------
 " Faster Commands:---------------------------------------------------------------{{{
-" One less key to get to command mode
-map ; :
 
 " Faster save
 nnoremap <Leader>w :w!<CR>
