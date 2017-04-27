@@ -14,6 +14,7 @@ set backspace=2 " Make backspace work like most other apps
 set notimeout   " Time out on key codes
 set ttimeout    " Dont timeout on mappings
 set ttimeoutlen=10
+set noeb vb t_vb=
 
 " Text Preferences
 set nowrap      " Dont wrap long lines
@@ -197,6 +198,10 @@ let g:pymode_run_bind = '<leader>pr'
 nnoremap <Leader>pl :PymodeLintAuto<CR>
 
 Plug 'farfanoide/vim-kivy'
+
+" PEP8
+Plug 'nvie/vim-flake8'
+
 "}}}--------------------[ end Python ]----------------------------------------
 " Ruby:---------------------------------------------------------------{{{
 
@@ -450,8 +455,6 @@ map <Leader>ei ^diwds(xea =wds{I@
 
 "}}}--------------------[ end Code Formatting  ]----------------------------------------
 " Faster Commands:---------------------------------------------------------------{{{
-" One less key to get to command mode
-map ; :
 
 " Faster save
 nnoremap <Leader>w :w!<CR>
