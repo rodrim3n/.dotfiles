@@ -33,5 +33,5 @@ alias be='bundle exec'
 
 
 # PYTHON
-alias rmpyc='find . -name "*.pyc" -delete'
+alias rmpyc='find . -name "*.pyc" -delete && echo DONE BITCH!'
 alias pm='python manage.py'
