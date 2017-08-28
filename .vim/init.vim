@@ -1,0 +1,1 @@
+/home/rodri/dotfiles/.vimrc
