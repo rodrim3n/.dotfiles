@@ -55,11 +55,13 @@ set modeline       " enable modeline for per file configs
 
 Plug 'editorconfig/editorconfig-vim' " http://editorconfig.org/
 
+" General: ------------------------------------------------
 
-
-" General:
 Plug 'tpope/vim-repeat' " enable repeating supported plugin maps with .
 Plug 'tpope/vim-eunuch' " nice UNIX helpers like SudoWrite, etc
+
+" Tags
+nnoremap <C-s> :BTags<CR>
 
 
 " Editing Plugins: ----------------------------------------
@@ -149,9 +151,6 @@ let g:pymode_run_bind = '<leader>pr'
 nnoremap <Leader>pl :PymodeLintAuto<CR>
 
 Plug 'farfanoide/vim-kivy'
-
-" PEP8
-Plug 'nvie/vim-flake8'
 
 "}}}--------------------[ end Python ]----------------------------------------
 
