@@ -1,4 +1,4 @@
-" Plug Init: ------------------------------------------------------------------{{{
+" Plog Init: ------------------------------------------------------------------{{{
 set nocompatible    " be iMproved, required
 filetype off        " required
 
@@ -27,10 +27,9 @@ set listchars=tab:│\ ,extends:▸\,precedes:❮,trail:•
 set clipboard=unnamedplus,unnamed " Use system wide clipboard by default
 set wildmenu              " Enhance command-line completion
 set wildmode=list:full    " Show complete list of options and navigation too
-set esckeys               " Allow cursor keys in insert mode
-set ttyfast               " Optimize for fast terminal connections
 set encoding=utf-8 nobomb " Use UTF-8 without BOM
 set binary                " Don’t add empty newlines at the end of files
+set guicursor=            " Resolves bug of weird chars
 
 " Disable backups and swap files
 set noswapfile
