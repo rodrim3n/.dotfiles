@@ -60,6 +60,7 @@ Plug 'tpope/vim-repeat' " enable repeating supported plugin maps with .
 Plug 'tpope/vim-eunuch' " nice UNIX helpers like SudoWrite, etc
 
 " Tags
+Plug 'ludovicchabant/vim-gutentags'
 nnoremap <C-s> :BTags<CR>
 
 
@@ -90,10 +91,23 @@ Plug 'Shougo/vimproc.vim', {'do': 'make'} " enable async stuff for Shougo's plug
 Plug 'Konfekt/FastFold'
 Plug 'Shougo/context_filetype.vim'
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-let g:deoplete#enable_at_startup = 1
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" let g:deoplete#enable_at_startup = 1
 " Plug 'Shougo/neocomplete.vim'
 " let g:neocomplete#enable_at_startup = 1
+
+" " Nvim Completion Manager: -----------------------------------
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+
+" autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
+
+Plug 'ncm2/ncm2-tern'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-tmux'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-jedi'
 
 " NeoSnippets: -----------------------------------------------{{{
 Plug 'honza/vim-snippets'
@@ -163,6 +177,7 @@ Plug 'plasticboy/vim-markdown'          " Markdown support
 Plug 'jceb/vim-orgmode'                 " OrgMode support
 Plug 'tpope/vim-speeddating'            " Required by vim-orgmode
 Plug 'elixir-lang/vim-elixir'           " Elixir support
+Plug 'posva/vim-vue'
 
 Plug 'scrooloose/syntastic' " Syntax check
 

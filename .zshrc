@@ -60,7 +60,6 @@ export WORKON_HOME=$HOME/.virtualenvs
 eval "$(rbenv init -)"
 
 source ~/.aliases
-source /usr/local/bin/virtualenvwrapper.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
