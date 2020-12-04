@@ -6,8 +6,6 @@ alias mplayer="mplayer -msgcolor"
 alias scp='scp -r'
 alias o='xdg-open'
 
-alias v='nvim'
-alias vi='nvim'
 alias vim='nvim'
 alias svi='sudo nvim'
 

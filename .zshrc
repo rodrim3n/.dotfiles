@@ -54,10 +54,6 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.yat.sh/bin:$PATH"
-export WORKON_HOME=$HOME/.virtualenvs
-eval "$(rbenv init -)"
 
 source ~/.aliases
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -95,5 +91,10 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore .hg -g ""'
 autoload -U compinit
 
 compinit
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
 
-fpath=(~/.zsh/completions $fpath)
+setxkbmap -option caps:escape
